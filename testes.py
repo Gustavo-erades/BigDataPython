@@ -1,9 +1,10 @@
 # importanto da bibliotecas que serão usadas
-import matplotlib.pyplot as plt
-import openpyxl as xlsx
-import pandas as pd
-import seaborn as sns
-import numpy as np
+import matplotlib.pyplot as plt #gráficos
+from openpyxl import Workbook #planilhas
+from openpyxl.drawing.image import Image #planilhas
+import pandas as pd #mexer com os dados
+import seaborn as sns #gráficos
+import numpy as np #gráficos
 '''
 - csv-->json-->xls-->análise das planilhas e elaboração de relatórios
 - primeiro, seleciona o arquivo .csv baixado das respostas do google
@@ -103,16 +104,13 @@ plt.xticks(np.arange(len(dias_semana)), dias_semana)
 plt.yticks(np.arange(len(pratos)), pratos)
 plt.colorbar(label='Satisfação')
 plt.show()
+
 #criando planilha
-from openpyxl import Workbook
-from openpyxl.drawing.image import Image
 
 # Crie um objeto Workbook
 workbook = Workbook()
-
 # Selecione a planilha ativa (padrão é 'Sheet')
 sheet = workbook.active
-
 # Adicione dados às células
 sheet['A1'] = 'Nome'
 sheet['B1'] = 'Idade'
@@ -120,14 +118,13 @@ sheet['A2'] = 'João'
 sheet['B2'] = 30
 sheet['A3'] = 'Maria'
 sheet['B3'] = 25
-
 # Inserir uma imagem
 img = Image('caminho/para/sua/imagem.jpg')
 sheet.add_image(img, 'C1')
-
 # Salve o arquivo
 workbook.save(filename='exemplo.xlsx')
 #criando gráficos numa planilha (talves seja melhor?)
+'''
 from openpyxl import Workbook
 from openpyxl.chart import BarChart, Reference
 
@@ -170,5 +167,5 @@ sheet.add_chart(chart, "D1")
 
 # Salve o arquivo
 workbook.save(filename='exemplo_com_grafico.xlsx')
-
+'''
 #fim
