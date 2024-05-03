@@ -1,7 +1,5 @@
 from openpyxl import Workbook #planilhas
 from openpyxl.drawing.image import Image #planilhas
-from openpyxl import Workbook #planilhas
-from openpyxl.drawing.image import Image #planilhas
 
 workbook = Workbook() #cria um workbook
 sheet = workbook.active #seleciona a planilha ativa no workbook (por padrão é 'sheet')
