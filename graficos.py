@@ -2,9 +2,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns 
 from estilos import *
 def graficoDispercao(dados,colx,coly):
-    plt.scatter(dados[colx], dados[coly], color='yellow', edgecolors='yellow')
+    plt.scatter(dados[colx], dados[coly], color='red', edgecolors='red')
     plt.grid(True)
     fig = plt.gcf() 
+    plt.close('all')
     return fig
 def graficoBarra(dados,col):
     graf_barras = sns.countplot(data=dados[col], palette=cores_grafico)
@@ -15,7 +16,7 @@ def graficoBarra(dados,col):
     fig = plt.gcf()
     plt.close('all')
     return fig
-def graficoPizza(dados, col): #ajustar esses valores! Estão muito errados!
+def graficoPizza(dados, col): #ERRO AQUI, AJUSTAR CÁLCULO
     respostas = dados[col]
     lista = []
     for resposta in respostas:

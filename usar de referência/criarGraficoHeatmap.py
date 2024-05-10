@@ -21,7 +21,7 @@ plt.xticks(np.arange(len(dias_semana)), dias_semana)
 plt.yticks(np.arange(len(pratos)), pratos)
 plt.colorbar(label='Satisfação')
 plt.show()
-
+plt.grid(True)
 path_img_temp='graficoPizza.png' #nome da imagem 
 fig = plt.gcf() #guarda a imagem que está no plt
 plt.show() #mostra a imagem que está no plt
