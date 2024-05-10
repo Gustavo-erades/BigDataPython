@@ -1,10 +1,8 @@
 import matplotlib.pyplot as plt 
 import seaborn as sns 
 from estilos import *
-def graficoDispercao(dados):
-    tempo_entrega = dados["O que mais é valorizado num consultório"]
-    nota_satisfacao = dados["O que te afasta de um consultório"]
-    plt.scatter(tempo_entrega, nota_satisfacao, color='b', edgecolors='black')
+def graficoDispercao(dados,colx,coly):
+    plt.scatter(dados[colx], dados[coly], color='yellow', edgecolors='red')
     plt.grid(True)
     fig = plt.gcf() 
     return fig
@@ -17,19 +15,25 @@ def graficoBarra(dados,col):
     fig = plt.gcf()
     plt.close('all')
     return fig
-def graficoPizza(dados, col):
+def graficoPizza(dados, col): #ajustar esses valores! Estão muito errados!
     respostas = dados[col]
     lista = []
     for resposta in respostas:
         lista.append(resposta)
     listaLabel = list(set(lista))
     print(f"\tLISTA: {listaLabel}")
+    listaLabel2=[]
+    j=len(listaLabel)-1
+    for i in reversed(listaLabel):
+        listaLabel2.append(listaLabel[j])
+        j-=1
+    print(f"\tLISTA 2: {listaLabel2}")
     opcoes = []
-    for i in range(0, len(listaLabel)):
+    for i in range(0, len(listaLabel2)):
         opcoes.append(lista.count(lista[i]))
     print(f"\tOPÇÕES: {opcoes}")    
     values = opcoes
-    label = listaLabel
+    label = listaLabel2
     colors = cores_grafico
     pie = plt.pie(values, autopct='%1.2f%%', shadow=False, colors=colors)
     plt.legend(pie[0], label, loc="lower center")

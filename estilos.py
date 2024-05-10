@@ -10,6 +10,16 @@ estilo_info_css = '''
     border-radius: 10px;
     padding: 10px;
     '''
+estilo_relacao_css = '''
+    color: #E3BA14;
+    font-weight:900;
+    text-transform:'uppercase';
+    '''
+estilo_titulo_grafico_css = '''
+    color: #9B30FF;
+    font-weight:900;
+    text-transform:'uppercase';
+    '''
 titulo_css = '''
     color: #2AA778;
     font-weight:bold;
