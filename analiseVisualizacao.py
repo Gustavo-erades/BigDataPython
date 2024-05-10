@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from graficos import *
 from estilos import *
+from trocaGrafDispercao import *
 st.title('Análise das respostas com python')
 st.write('<h6 style="'+titulo_css+'">Os gráficos abaixo representam de maneira gráfica as respostas no formulário de satisfação geral</h6>',unsafe_allow_html=True)
 checkbox_mostrar_tabela=st.sidebar.checkbox('Mostrar tabela')
@@ -23,10 +24,7 @@ if checkbox_mostrar_graficos:
         st.write(graficoBarra(dados,categoria))
         st.write("<hr/>",unsafe_allow_html=True)
         if checkbox_mostrar_analises:
-            categoriasGraficoDispercao = list(dados.keys())
-            categoriaDispercao = st.sidebar.selectbox('Selecione a categoria para relacionar as respostas', options = categoriasGraficoDispercao)
-            st.write( '<h2 style="' + estilo_relacao_css + '">'+categoriaDispercao+' X '+categoria+'</h2>', unsafe_allow_html=True)
-            st.write(graficoDispercao(dados,categoriaDispercao,categoria))
+            switch(dados,categoria)
     else:
         st.write('<span style="' + estilo_erro_css + '">Essa pergunta não possui gráficos associados!</span>', unsafe_allow_html=True)
 if mostra_num_resp:

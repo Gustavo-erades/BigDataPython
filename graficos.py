@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns 
 from estilos import *
 def graficoDispercao(dados,colx,coly):
-    plt.scatter(dados[colx], dados[coly], color='yellow', edgecolors='red')
+    plt.scatter(dados[colx], dados[coly], color='yellow', edgecolors='yellow')
     plt.grid(True)
     fig = plt.gcf() 
     return fig
