@@ -14,4 +14,4 @@ titulo_css = '''
     color: #2AA778;
     font-weight:bold;
     '''
-cores_grafico=['#E1002F', '#007CDB', '#E3BA14', '#40DB9E']
+cores_grafico=['#E1002F', '#007CDB', '#E3BA14', '#40DB9E','#9B30FF']

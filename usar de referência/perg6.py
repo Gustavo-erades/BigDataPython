@@ -1,4 +1,4 @@
-'''
+
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
@@ -42,4 +42,3 @@ plt.xticks(range(3), ['Tópico 0', 'Tópico 1', 'Sentimento'])
 plt.legend()
 plt.title('Análise de Respostas Não Objetivas')
 plt.show()
-'''

@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt #gráficos
 import pandas as pd #mexer com os dados
-import matplotlib.pyplot as plt #gráficos
-import pandas as pd #mexer com os dados
 import seaborn as sns #gráficos
 fileName="arquivo.json"
 df = pd.read_json('arquivo.json')
