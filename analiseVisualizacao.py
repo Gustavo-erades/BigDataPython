@@ -10,6 +10,10 @@ checkbox_mostrar_graficos = st.sidebar.checkbox('Mostrar gráficos das respostas
 #lê arquivo json com as respostas
 dados = pd.read_json('./arquivos/respostasJSON_atualizado.json')
 mostra_num_resp=False
+if checkbox_mostrar_tabela:
+    st.write('<h2 style="'+estilo_titulo_tabela_css+'"> Tabela</h2>',unsafe_allow_html=True)
+    mostra_num_resp=True
+    st.write(dados)
 if checkbox_mostrar_graficos:
     mostra_num_resp=True
     #coloca as categorias para seleção

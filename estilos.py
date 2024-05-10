@@ -20,6 +20,11 @@ estilo_titulo_grafico_css = '''
     font-weight:900;
     text-transform:'uppercase';
     '''
+estilo_titulo_tabela_css = '''
+    color: #E1002F;
+    font-weight:900;
+    text-transform:'uppercase';
+    '''
 titulo_css = '''
     color: #2AA778;
     font-weight:bold;
