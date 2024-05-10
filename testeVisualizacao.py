@@ -3,7 +3,7 @@ import pandas as pd
 from graficoPizza import *
 from estilos import *
 st.title('Análise das respostas com python')
-st.write('<span style="'+titulo_css+'">Os gráficos abaixo representam de maneira gráfica as respostas no formulário de satisfação geral</span>',unsafe_allow_html=True)
+st.write('<h6 style="'+titulo_css+'">Os gráficos abaixo representam de maneira gráfica as respostas no formulário de satisfação geral</h6>',unsafe_allow_html=True)
 checkbox_mostrar_tabela = st.sidebar.checkbox('Mostrar tabela')
 #lê arquivo json com as respostas
 dados = pd.read_json('./arquivos/respostasJSON_atualizado.json')

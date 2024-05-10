@@ -11,9 +11,7 @@ estilo_info_css = '''
     padding: 10px;
     '''
 titulo_css = '''
-    background-color: #2AA778;
-    color: #fff;
-    border-radius: 10px;
-    padding: 10px;
+    color: #2AA778;
+    font-weight:bold;
     '''
 cores_grafico=['#E1002F', '#007CDB', '#E3BA14', '#40DB9E']
