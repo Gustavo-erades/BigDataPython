@@ -37,6 +37,7 @@ if checkbox_mostrar_graficos:
             st.write("<hr>",unsafe_allow_html=True)
             switch(dados,categoria)
     else:
+        #exibindo pergunta 6
         st.write('<ul>',unsafe_allow_html=True)
         num_resp=0
         num_prob=0
