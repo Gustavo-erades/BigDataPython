@@ -13,7 +13,9 @@ mostra_num_resp=False
 if checkbox_mostrar_tabela:
     st.write('<h2 style="'+estilo_titulo_tabela_css+'"> Tabela</h2>',unsafe_allow_html=True)
     mostra_num_resp=True
-    st.write(dados)
+    st.sidebar.markdown('## Linhas na tabela')
+    qntd_linhas=st.sidebar.slider('Selecione a quantidade de linhas que deseja mostrar na tabela', min_value=1, max_value=len(dados),step=1)
+    st.write(dados.head(qntd_linhas))
 if checkbox_mostrar_graficos:
     mostra_num_resp=True
     #coloca as categorias para seleção
