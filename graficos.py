@@ -21,23 +21,34 @@ def graficoPizza(dados, col): #ERRO AQUI, AJUSTAR CÁLCULO
     lista = []
     for resposta in respostas:
         lista.append(resposta)
-    listaLabel = list(set(lista))
-    print(f"\tLISTA: {listaLabel}")
-    listaLabel2=[]
-    j=len(listaLabel)-1
-    for i in reversed(listaLabel):
-        listaLabel2.append(listaLabel[j])
-        j-=1
-    print(f"\tLISTA 2: {listaLabel2}")
+    print(f"\tLISTA: {lista}")
     opcoes = []
-    for i in range(0, len(listaLabel2)):
+    for i in range(0, len(lista)):
         opcoes.append(lista.count(lista[i]))
+        print("****************\n")
+        print(str(opcoes)+"\n")
+        print("****************\n")
     print(f"\tOPÇÕES: {opcoes}")    
-    values = opcoes
-    label = listaLabel2
-    colors = cores_grafico
-    pie = plt.pie(values, autopct='%1.2f%%', shadow=False, colors=colors)
-    plt.legend(pie[0], label, loc="lower center")
+    values = list(set(opcoes))
+    print(values)
+    label = list(set(lista))
+    listaLabels=[]
+    for i in range(0, len(lista)):
+        for j in range(0, len(label)):
+            if lista[i]==label[j]:
+                rep= lista.count(label[j])
+                if (rep==1):
+                    listaLabels.append("outros")
+                else:
+                    listaLabels.append(lista[i])
+    teste=list(set(listaLabels))
+    print(f"TAMANHO:{len(values)}")
+    if (len(values)>3):
+        cores=cores_grafico_tam4
+    else:
+        cores=cores_grafico_tam3
+    pie = plt.pie(values,autopct='%.1f%%', shadow=False, colors=cores)
+    #plt.legend(pie[0], teste, loc="lower center")
     fig = plt.gcf()
     plt.close('all')
     return fig

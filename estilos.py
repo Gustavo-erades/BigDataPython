@@ -30,3 +30,6 @@ titulo_css = '''
     font-weight:bold;
     '''
 cores_grafico=['#E1002F', '#007CDB', '#E3BA14', '#40DB9E','#9B30FF']
+
+cores_grafico_tam4=['#40DB9E', '#E3BA14', '#E1002F', '#007CDB']
+cores_grafico_tam3=['#E3BA14', '#E1002F', '#007CDB']
