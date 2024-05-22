@@ -31,7 +31,8 @@ if checkbox_mostrar_graficos:
     #gera os gráficos
     if(categoria!='Problemas/Desconfortos num consultório'):
         checkbox_mostrar_analises=st.sidebar.checkbox('Mostrar gráficos relacionados')
-        st.write(graficoPizza(dados, categoria))
+        grafPizza=graficoPizza(dados, categoria)
+        st.write(grafPizza[0])
         st.write("<hr>",unsafe_allow_html=True)
         st.write(graficoBarra(dados,categoria))
         st.write("<hr/>",unsafe_allow_html=True)

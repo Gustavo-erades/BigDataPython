@@ -16,21 +16,15 @@ def graficoBarra(dados,col):
     fig = plt.gcf()
     plt.close('all')
     return fig
-def graficoPizza(dados, col): #ERRO AQUI, AJUSTAR CÁLCULO
+def graficoPizza(dados, col):
     respostas = dados[col]
     lista = []
     for resposta in respostas:
         lista.append(resposta)
-    print(f"\tLISTA: {lista}")
     opcoes = []
     for i in range(0, len(lista)):
         opcoes.append(lista.count(lista[i]))
-        print("****************\n")
-        print(str(opcoes)+"\n")
-        print("****************\n")
-    print(f"\tOPÇÕES: {opcoes}")    
     values = list(set(opcoes))
-    print(values)
     label = list(set(lista))
     listaLabels=[]
     for i in range(0, len(lista)):
@@ -41,14 +35,10 @@ def graficoPizza(dados, col): #ERRO AQUI, AJUSTAR CÁLCULO
                     listaLabels.append("outros")
                 else:
                     listaLabels.append(lista[i])
-    teste=list(set(listaLabels))
-    print(f"TAMANHO:{len(values)}")
-    if (len(values)>3):
-        cores=cores_grafico_tam4
-    else:
-        cores=cores_grafico_tam3
-    pie = plt.pie(values,autopct='%.1f%%', shadow=False, colors=cores)
-    #plt.legend(pie[0], teste, loc="lower center")
+    valuesLegenda=list(set(listaLabels))
+    plt.pie(values,autopct='%.1f%%', shadow=False)
     fig = plt.gcf()
     plt.close('all')
-    return fig
+    print(f"DADOS GRÁFICO:{values}")
+    print(f"DADOS LEGENDA:{valuesLegenda}")
+    return [fig, values, valuesLegenda]
