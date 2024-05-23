@@ -34,6 +34,12 @@ if checkbox_mostrar_graficos:
         grafPizza=graficoPizza(dados, categoria)
         st.write(grafPizza[0])
         st.write("<hr>",unsafe_allow_html=True)
+        st.write("<ul>",unsafe_allow_html=True)
+        for i in range(0, len(grafPizza[2])):
+            if(grafPizza[1][i]!=0):
+                st.write("<li>"+grafPizza[2][i]+": "+str(grafPizza[1][i])+" respostas</li>",unsafe_allow_html=True)
+        st.write("<ul>",unsafe_allow_html=True)
+        st.write("<hr>",unsafe_allow_html=True)
         st.write(graficoBarra(dados,categoria))
         st.write("<hr/>",unsafe_allow_html=True)
         if checkbox_mostrar_analises:

@@ -21,10 +21,6 @@ def graficoPizza(dados, col):
     lista = []
     for resposta in respostas:
         lista.append(resposta)
-    opcoes = []
-    for i in range(0, len(lista)):
-        opcoes.append(lista.count(lista[i]))
-    values = list(set(opcoes))
     label = list(set(lista))
     listaLabels=[]
     for i in range(0, len(lista)):
@@ -35,10 +31,14 @@ def graficoPizza(dados, col):
                     listaLabels.append("outros")
                 else:
                     listaLabels.append(lista[i])
-    valuesLegenda=list(set(listaLabels))
-    plt.pie(values,autopct='%.1f%%', shadow=False)
+    valuesLegenda=list(set(listaLabels))                  
+    values=[]
+    for i in range(0,len(valuesLegenda)):
+        values.append(lista.count(valuesLegenda[i]))
+    plt.pie(values,autopct='%.1f%%', shadow=False, colors=cores_grafico)
+    plt.legend(valuesLegenda, loc="lower center")
     fig = plt.gcf()
     plt.close('all')
-    print(f"DADOS GRÁFICO:{values}")
-    print(f"DADOS LEGENDA:{valuesLegenda}")
     return [fig, values, valuesLegenda]
+def graficoHashmap(dados, col):
+    
