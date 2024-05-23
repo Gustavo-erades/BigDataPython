@@ -7,7 +7,6 @@ st.title('Análise das respostas com python')
 st.write('<h6 style="'+titulo_css+'">Os gráficos representam as respostas no formulário de satisfação geral</h6>',unsafe_allow_html=True) 
 checkbox_mostrar_tabela=st.sidebar.checkbox('Mostrar tabela')
 checkbox_mostrar_graficos = st.sidebar.checkbox('Mostrar gráficos das respostas')
-checkbox_dados_relacionados = st.sidebar.checkbox('Exibir dados relacionados')
 texto_sobre="Análise gráfica das respostas do formulário de satisfação em consultórios odontológicos no geral. O formulário ficou disponibilizado ao público durante o primeiro semestre de 2024."
 #lê arquivo json com as respostas
 dados = pd.read_json('./arquivos/respostasJSON_atualizado.json')
@@ -38,6 +37,7 @@ if checkbox_mostrar_graficos:
             if(grafPizza[1][i]!=0):
                 st.write("<li>"+grafPizza[2][i]+": "+str(grafPizza[1][i])+" respostas</li>",unsafe_allow_html=True)
         st.write("<ul>",unsafe_allow_html=True)
+        st.write(graficoPlotagem(dados, categoria))
         st.write("<hr>",unsafe_allow_html=True)
         st.write(graficoBarra(dados,categoria))
         st.write("<hr/>",unsafe_allow_html=True)

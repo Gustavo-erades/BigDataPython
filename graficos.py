@@ -40,5 +40,28 @@ def graficoPizza(dados, col):
     fig = plt.gcf()
     plt.close('all')
     return [fig, values, valuesLegenda]
-#def graficoHashmap(dados, col):
-    
+def graficoPlotagem(dados, col):
+    respostas = dados[col]
+    lista = []
+    for resposta in respostas:
+        lista.append(resposta)
+    label = list(set(lista))
+    listaLabels=[]
+    for i in range(0, len(lista)):
+        for j in range(0, len(label)):
+            if lista[i]==label[j]:
+                rep= lista.count(label[j])
+                if (rep==1):
+                    listaLabels.append("outros")
+                else:
+                    listaLabels.append(lista[i])
+    valuesLegenda=list(set(listaLabels))                  
+    values=[]
+    for i in range(0,len(valuesLegenda)):
+        values.append(lista.count(valuesLegenda[i]))
+    fig, ax = plt.subplots()
+    ax.plot(values,valuesLegenda , color='red', linestyle='--', marker='o', label='dados')
+    ax.set_xlabel('Quantidade de respostas')
+    fig = plt.gcf()
+    plt.close('all')
+    return fig
