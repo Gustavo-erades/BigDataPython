@@ -40,5 +40,5 @@ def graficoPizza(dados, col):
     fig = plt.gcf()
     plt.close('all')
     return [fig, values, valuesLegenda]
-def graficoHashmap(dados, col):
+#def graficoHashmap(dados, col):
     

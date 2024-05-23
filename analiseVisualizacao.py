@@ -6,7 +6,6 @@ from trocaGrafDispercao import *
 st.title('Análise das respostas com python')
 st.write('<h6 style="'+titulo_css+'">Os gráficos representam as respostas no formulário de satisfação geral</h6>',unsafe_allow_html=True) 
 checkbox_mostrar_tabela=st.sidebar.checkbox('Mostrar tabela')
-checkbox_dados_relacionados = st.sidebar.checkbox('Exibir informações dos dados')
 checkbox_mostrar_graficos = st.sidebar.checkbox('Mostrar gráficos das respostas')
 checkbox_dados_relacionados = st.sidebar.checkbox('Exibir dados relacionados')
 texto_sobre="Análise gráfica das respostas do formulário de satisfação em consultórios odontológicos no geral. O formulário ficou disponibilizado ao público durante o primeiro semestre de 2024."
@@ -43,7 +42,6 @@ if checkbox_mostrar_graficos:
         st.write(graficoBarra(dados,categoria))
         st.write("<hr/>",unsafe_allow_html=True)
         if checkbox_mostrar_analises:
-            st.write("<hr>",unsafe_allow_html=True)
             switch(dados,categoria)
     else:
         #exibindo pergunta 6

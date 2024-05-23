@@ -34,14 +34,12 @@ styleTituloSobre='''
     font-weight:bold;
     '''
 styleDivSobre='''
-    background-color:#ffbfaa;
+    background-color:#ffe9e2;
     padding:4px 8px;
     border-radius:8px;
-    box-shadow: 2px 2px 3px;
     '''
 styleConteudoSobre='''
     font-size=1.5em;
-    font-weight:bold;
     font-style:italic;
     color:#E1002F;
     '''
