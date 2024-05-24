@@ -23,22 +23,32 @@ def graficoPizza(dados, col):
         lista.append(resposta)
     label = list(set(lista))
     listaLabels=[]
+    print(f"array lista: {lista}\narray label: {label}")
     for i in range(0, len(lista)):
+        print(f"primeiro loop for nº{i}")
         for j in range(0, len(label)):
+            print(f"segundo loop for nº{j}")
             if lista[i]==label[j]:
+                print(f"{lista[i]} é igual a {label[j]}, portanto vai entrar na variável rep para a condição")
                 rep= lista.count(label[j])
-                if (rep==1):
+                if (rep<=1):
+                    print("Vai entrar na listaLabels como 'outros' ")
                     listaLabels.append("outros")
                 else:
+                    print("Vai entrar na listaLabels normalmente")
                     listaLabels.append(lista[i])
-    valuesLegenda=list(set(listaLabels))                  
+    print(f"listaLabels:{listaLabels}")
+    valuesLegenda=list(set(listaLabels)) 
+    print(f"valuesLegenda: {valuesLegenda}")                 
     values=[]
+    #variável global --> cores | contar a quantidade de vezes que passa pelo loop e pela condição
     for i in range(0,len(valuesLegenda)):
         values.append(lista.count(valuesLegenda[i]))
+    print(f"quantidade de 'outros' nas respostas {valuesLegenda.count('outros')}")
     plt.pie(values,autopct='%.1f%%', shadow=False, colors=cores_grafico)
     plt.legend(valuesLegenda, loc="lower center")
     fig = plt.gcf()
-    plt.close('all')
+    plt.close('all'),
     return [fig, values, valuesLegenda]
 def graficoPlotagem(dados, col):
     respostas = dados[col]

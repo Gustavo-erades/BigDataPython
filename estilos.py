@@ -1,6 +1,6 @@
 estilo_erro_css = '''
-    background-color: #E1002F;
-    color: #fff;
+    background-color:#ffe9e2;
+    color: #E1002F;
     border-radius: 10px;
     padding: 10px;
     '''

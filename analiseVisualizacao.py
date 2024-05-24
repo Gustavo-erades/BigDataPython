@@ -45,6 +45,7 @@ if checkbox_mostrar_graficos:
             switch(dados,categoria)
     else:
         #exibindo pergunta 6
+        st.write("<p><b>essas foram todas as respostas obtidas</b></p>",unsafe_allow_html=True)
         st.write('<ul>',unsafe_allow_html=True)
         num_resp=0
         num_prob=0
@@ -59,6 +60,7 @@ if checkbox_mostrar_graficos:
         st.write('<h4> '+str(num_prob)+' pessoas informaram já ter tido problemas</h4>',unsafe_allow_html=True)
         st.write("<hr>",unsafe_allow_html=True)
         st.write('<h3 style="'+estilo_titulo_grafico_css+'">Problemas informados:</h3>',unsafe_allow_html=True)
+        st.write("<p><b>aqui foram filtradas as respostas para aquelas que especificavam o problema</b></p>",unsafe_allow_html=True)
         st.write("<ul>",unsafe_allow_html=True)
         for resposta in dados[categoria]:
             if (resposta!=None) and (len(resposta)>4):
