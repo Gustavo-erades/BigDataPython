@@ -5,10 +5,11 @@ estilo_erro_css = '''
     padding: 10px;
     '''
 estilo_info_css = '''
-    background-color: #E1002F;
-    color: #fff;
+    background-color: #ffe9e2;
+    color:#E1002F;
     border-radius: 10px;
     padding: 10px;
+    font-weight:bold;
     '''
 estilo_relacao_css = '''
     color: #E1002F;

@@ -32,14 +32,19 @@ if checkbox_mostrar_graficos:
         grafPizza=graficoPizza(dados, categoria)
         st.write(grafPizza[0])
         st.write("<hr>",unsafe_allow_html=True)
-        st.write("<ul>",unsafe_allow_html=True)
-        for i in range(0, len(grafPizza[2])):
-            if(grafPizza[1][i]!=0):
-                st.write("<li>"+grafPizza[2][i]+": "+str(grafPizza[1][i])+" respostas</li>",unsafe_allow_html=True)
-        st.write("<ul>",unsafe_allow_html=True)
         st.write(graficoPlotagem(dados, categoria))
         st.write("<hr>",unsafe_allow_html=True)
         st.write(graficoBarra(dados,categoria))
+        st.write("<hr/>",unsafe_allow_html=True)
+        st.write("<ul>",unsafe_allow_html=True)
+        outrosVal=0
+        for i in range(0, len(grafPizza[2])):
+            if(grafPizza[1][i]!=0 and grafPizza[1][i]>1):
+                st.write("<li>"+grafPizza[2][i]+": "+str(grafPizza[1][i])+" respostas</li>",unsafe_allow_html=True)
+            else:
+                outrosVal=outrosVal+grafPizza[1][i]
+        st.write("<li> Outros: "+str(outrosVal)+" respostas</li>",unsafe_allow_html=True)
+        st.write("</ul>",unsafe_allow_html=True)
         st.write("<hr/>",unsafe_allow_html=True)
         if checkbox_mostrar_analises:
             switch(dados,categoria)
@@ -57,6 +62,7 @@ if checkbox_mostrar_graficos:
                 num_resp+=1
         st.write("</ul",unsafe_allow_html=True)
         st.write("<hr>",unsafe_allow_html=True)
+        st.write('<p> foram analisadas '+str(num_resp)+' respostas</p>',unsafe_allow_html=True)
         st.write('<h4> '+str(num_prob)+' pessoas informaram já ter tido problemas</h4>',unsafe_allow_html=True)
         st.write("<hr>",unsafe_allow_html=True)
         st.write('<h3 style="'+estilo_titulo_grafico_css+'">Problemas informados:</h3>',unsafe_allow_html=True)
@@ -69,7 +75,7 @@ if checkbox_mostrar_graficos:
         st.write("<hr>",unsafe_allow_html=True)
         st.write('<span style="' + estilo_erro_css + '">Essa pergunta não possui gráficos associados!</span>', unsafe_allow_html=True)
 if mostra_num_resp:
-    st.write('<span style="'+estilo_info_css+'"> Nº de respostas: '+str(num_resp)+'</span>',unsafe_allow_html=True)
+    st.write('<span style="'+estilo_info_css+'"> Nº de respostas: '+str(num_resp)+' </span>',unsafe_allow_html=True)
 st.sidebar.html("<h1 style='"+styleTituloSobre+"'>sobre</h1>")
 st.sidebar.html("<div style='"+styleDivSobre+"'><p style='"+styleConteudoSobre+"'>"+texto_sobre+"</p></div>")
       
